@@ -37,7 +37,6 @@ function onClickEnlarge(evt) {
   );
   instance.show();
   document.addEventListener("keydown", (e) => {
-    s;
     if (e.key === "Escape") instance.close();
   });
 }
