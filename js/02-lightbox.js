@@ -21,7 +21,7 @@ function renderGallery(arr) {
 }
 renderGallery(galleryItems);
 
-const lightBox = new SimpleLightbox(".gallery a", {
+new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionPosition: "bottom",
   captionDelay: 250,

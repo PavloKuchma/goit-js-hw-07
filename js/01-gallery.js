@@ -29,14 +29,13 @@ function onClickEnlarge(evt) {
     return;
   }
   const currentImage = evt.target.dataset.source;
-  const imgToEnlarge = galleryItems.find(
-    (item) => item.original === currentImage
-  );
   const instance = basicLightbox.create(
-    `<img width="1400" height="900" src="${imgToEnlarge.original}">`
+    `<img width="1400" height="900" src="${currentImage}">`
   );
   instance.show();
-  document.addEventListener("keydown", (e) => {
+  const onEsc = (e) => {
     if (e.key === "Escape") instance.close();
-  });
+    document.removeEventListener("keydown", onEsc);
+  };
+  document.addEventListener("keydown", onEsc);
 }
